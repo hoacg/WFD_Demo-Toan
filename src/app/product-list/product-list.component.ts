@@ -14,7 +14,9 @@ export class ProductListComponent {
   isFormHidden = true;
 
   constructor(private productService: ProductService) {
-    this.productList = this.productService.getList();
+    this.productService.getList().subscribe( result => {
+      this.productList = result;
+    });
   }
 
   addToCart(product: Product) {

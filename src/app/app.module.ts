@@ -10,6 +10,7 @@ import { MenuComponent } from './menu/menu.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ProductComponent } from './product/product.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 const routers: Routes = [
   {
@@ -40,7 +41,8 @@ const routers: Routes = [
     BrowserModule,
     RouterModule.forRoot(routers),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
