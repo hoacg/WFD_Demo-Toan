@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Product} from '../product';
+import {ProductService} from '../product.service';
 
 @Component({
   selector: 'app-product',
@@ -16,13 +17,19 @@ export class ProductComponent implements OnInit {
   // @Input() description = 'A product of Apple';
   // @Input() image = 'https://cdn.tgdd.vn/Products/Images/42/204651/vivo-y19-white-quanghai-400x460.png';
 
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
   }
 
   emitBuyClick() {
     this.buyClick.emit(); // emit an event
+  }
+
+  deleteProduct() {
+    this.productService.deleteProduct(this.product.id).subscribe( result => {
+      alert('Xóa thành công!');
+    });
   }
 
 }

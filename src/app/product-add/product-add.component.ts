@@ -12,7 +12,7 @@ export class ProductAddComponent implements OnInit {
 
 
   productForm: FormGroup = new FormGroup({
-    productName: new FormControl(''),
+    name: new FormControl(''),
     description: new FormControl(''),
     price: new FormControl(''),
     image: new FormControl(''),
@@ -28,7 +28,9 @@ export class ProductAddComponent implements OnInit {
   onSubmit() {
     const product = this.productForm.value;
     this.addProduct.emit(product);
-    this.productService.addProduct(product);
+    this.productService.addProduct(product).subscribe( result => {
+      alert('Đã thêm thành công !');
+    });
   }
 
 }

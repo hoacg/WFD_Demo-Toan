@@ -13,7 +13,10 @@ export class ProductService {
     return this.httpClient.get<Product[]>('http://localhost:5000/api/products');
   }
   addProduct(product: Product) {
-    // this.productList.push(product);
     return this.httpClient.post('http://localhost:5000/api/products', product);
+  }
+
+  deleteProduct(id: number) {
+    return this.httpClient.delete('http://localhost:5000/api/products/' + id);
   }
 }
