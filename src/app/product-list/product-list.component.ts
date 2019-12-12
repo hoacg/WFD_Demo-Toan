@@ -14,9 +14,7 @@ export class ProductListComponent {
   isFormHidden = true;
 
   constructor(private productService: ProductService) {
-    this.productService.getList().subscribe( result => {
-      this.productList = result;
-    });
+    this.updateList();
   }
 
   addToCart(product: Product) {
@@ -31,4 +29,9 @@ export class ProductListComponent {
     this.productList.push(product);
   }
 
+  updateList() {
+    this.productService.getList().subscribe( result => {
+      this.productList = result;
+    });
+  }
 }

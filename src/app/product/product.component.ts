@@ -12,6 +12,7 @@ export class ProductComponent implements OnInit {
 
   @Input() product: Product;
   @Output() buyClick = new EventEmitter();
+  @Output() deleted = new EventEmitter();
 
   // @Input() name = 'iPhone';
   // @Input() description = 'A product of Apple';
@@ -29,6 +30,7 @@ export class ProductComponent implements OnInit {
   deleteProduct() {
     this.productService.deleteProduct(this.product.id).subscribe( result => {
       alert('Xóa thành công!');
+      this.deleted.emit();
     });
   }
 
