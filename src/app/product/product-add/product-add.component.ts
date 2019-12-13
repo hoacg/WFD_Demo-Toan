@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {Product} from '../product';
+import {Product} from '../../product';
 import {ProductService} from '../product.service';
 
 @Component({

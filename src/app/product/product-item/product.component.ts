@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Product} from '../product';
+import {Product} from '../../product';
 import {ProductService} from '../product.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class ProductComponent implements OnInit {
   @Output() deleted = new EventEmitter();
 
   // @Input() name = 'iPhone';
-  // @Input() description = 'A product of Apple';
+  // @Input() description = 'A product-item of Apple';
   // @Input() image = 'https://cdn.tgdd.vn/Products/Images/42/204651/vivo-y19-white-quanghai-400x460.png';
 
   constructor(private productService: ProductService) { }
