@@ -8,8 +8,16 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 
 const routers: Routes = [
   {
-    path: '',
+    path: 'products',
     loadChildren: './product/product.module#ProductModule'
+  },
+  {
+    path: 'providers',
+    loadChildren: './providers/providers.module#ProvidersModule'
+  },
+  {
+    path: 'admin',
+    loadChildren: './admin/admin.module#AdminModule'
   }
 ];
 

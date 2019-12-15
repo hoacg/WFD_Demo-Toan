@@ -16,7 +16,7 @@ const routers: Routes = [
     component: ProductListComponent
   },
   {
-    path: 'add-product-item',
+    path: 'add-product',
     component: ProductAddComponent
   },
   {
@@ -39,6 +39,9 @@ const routers: Routes = [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
+  ],
+  exports: [
+    ProductListComponent
   ],
   providers: [ProductService]
 })

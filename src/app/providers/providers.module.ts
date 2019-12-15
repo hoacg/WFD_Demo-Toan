@@ -17,6 +17,9 @@ const routers: Routes = [
 
 @NgModule({
   declarations: [ProviderListComponent, ProviderAddComponent],
+  exports: [
+    ProviderListComponent
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routers)
