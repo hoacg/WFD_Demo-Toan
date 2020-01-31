@@ -13,7 +13,12 @@ export class ProductListComponent {
   buyItems = 0;
   isFormHidden = true;
 
+  isLoading: boolean;
+  isSuccess: boolean;
+  message: string;
+
   constructor(private productService: ProductService) {
+    this.isLoading = false;
     this.updateList();
   }
 
@@ -30,8 +35,18 @@ export class ProductListComponent {
   }
 
   updateList() {
+    this.isLoading = true;
     this.productService.getList().subscribe( result => {
-      this.productList = result;
+      this.isLoading = false;
+      this.isSuccess = result.success;
+      this.message = result.message;
+      if (result.success) {
+        this.productList = result.data;
+      }
+    }, error => {
+      this.isLoading = false;
+      this.isSuccess = false;
+      this.message = 'Gặp lỗi chưa rõ!';
     });
   }
 }

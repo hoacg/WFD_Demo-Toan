@@ -1,3 +1,11 @@
+<div *ngIf="isLoading" class="spinner-border" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+
+<div *ngIf="!isLoading" class="alert {{ (isSuccess) ? 'alert-success' : 'alert-danger' }}" role="alert">
+  {{ message }}
+</div>
+
 <div class="row">
   <div class="col-4" *ngFor="let item of productList" style="padding-top: 10px;">
     <app-product [product]="item" (buyClick)="addToCart(item)" (deleted)="updateList()"></app-product>
