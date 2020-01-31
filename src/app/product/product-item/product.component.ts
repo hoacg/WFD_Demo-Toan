@@ -29,7 +29,7 @@ export class ProductComponent implements OnInit {
 
   deleteProduct() {
     this.productService.deleteProduct(this.product.id).subscribe( result => {
-      alert('Xóa thành công!');
+      alert(result.message);
       this.deleted.emit();
     });
   }

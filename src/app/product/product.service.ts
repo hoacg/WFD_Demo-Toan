@@ -18,7 +18,7 @@ export class ProductService {
     return this.httpClient.post(this.apiUrl + 'api/products', product);
   }
 
-  deleteProduct(id: number) {
-    return this.httpClient.delete(this.apiUrl + 'api/products/' + id);
+  deleteProduct(id: number): Observable<HttpResult> {
+    return this.httpClient.delete<HttpResult>(this.apiUrl + 'api/products/' + id);
   }
 }
